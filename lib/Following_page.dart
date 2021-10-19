@@ -79,14 +79,47 @@ class _FollowingPageState extends State<FollowingPage> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: ListView.builder(
+              padding: EdgeInsets.symmetric(horizontal: 10),
               itemCount: following.length,
               itemBuilder: (BuildContext context,int index){
                 return Container(
-                  height: MediaQuery.of(context).size.height/10,
+                  height: MediaQuery.of(context).size.height/7.5,
                   width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.symmetric(vertical: 10),
                   child: Row(
                     children: [
-
+                       CircleAvatar(
+                         backgroundImage: AssetImage("${following[index].image}"),
+                         radius: 40,
+                       ),
+                       Expanded(
+                         child: Container(
+                           height: MediaQuery.of(context).size.height/8.5,
+                           width: MediaQuery.of(context).size.width,
+                           margin: EdgeInsets.symmetric(horizontal: 15,vertical: 15),
+                           child: RichText(
+                             textAlign: TextAlign.start,
+                             text: TextSpan(
+                               text: "${following[index].name}\n",
+                               style: TextStyle(
+                                 fontWeight: FontWeight.w700,
+                                 fontSize: 20,
+                                 color: Color.fromRGBO(21,21, 21, 1),
+                               ),
+                               children: [
+                                 TextSpan(
+                                   text: "${following[index].date}",
+                                   style: TextStyle(
+                                     fontSize: 15,
+                                     fontWeight: FontWeight.w500,
+                                     color: Color.fromRGBO(79, 79, 79, 1)
+                                   ),
+                                 )
+                               ]
+                             ),
+                           ),
+                         ),
+                       ),
                     ],
                   ),
                 );
