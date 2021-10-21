@@ -5,7 +5,7 @@ import 'package:suntusthsbatchfirst/models/follower_modle.dart';
 
 List<Follower> followers =[
   Follower(username: "Kazi Afroz",friends: 345,image: "images/Posts/Post_1.jpg"),
-  Follower(username: "Homiun Kabir",friends: 456,image: "images/Posts/Post_2.jpg"),
+  Follower(username: "Homiun Kabir",friends: 456,image: "images/Posts/Post_2.png"),
   Follower(username: "Murshadul Haq",friends: 1098,image: "images/Posts/Post_3.jpg"),
   Follower(username: "Abir Hassain",friends: 456,image: "images/Posts/Post_4.jpg"),
   Follower(username: "Murshadul Hossain Babla",friends: 454,image: "images/Posts/Post_5.jpg"),
@@ -79,7 +79,51 @@ class _FollowerPageState extends State<FollowerPage> {
               itemCount: followers.length,
               itemBuilder: (BuildContext context,int index){
                 return Container(
-
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  height: MediaQuery.of(context).size.height/6,
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundImage: AssetImage("${followers[index].image}"),
+                      ),
+                      Expanded(
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                      "${followers[index].username}",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 20,
+                                      color: Color.fromRGBO(21, 34, 45, .5),
+                                    ),
+                                    textAlign: TextAlign.start,
+                                  ),
+                                  SizedBox(height: 5,),
+                                  Text(
+                                      "Friends : ${followers[index].friends}",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color.fromRGBO(86, 86, 90, 1),
+                                    ),
+                                    textAlign: TextAlign.start,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                      ),
+                    ],
+                  ),
                 );
               }
           ),
