@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:suntusthsbatchfirst/timeline.dart';
 
 import 'home_page.dart';
 
@@ -74,7 +75,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   onPressed: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context)=>HomePage(),
+                      MaterialPageRoute(
+                        builder: (context)=>TimeLinePage(),
                       ),
                     );
                   },

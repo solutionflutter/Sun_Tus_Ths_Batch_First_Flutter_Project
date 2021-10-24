@@ -5,6 +5,7 @@ import 'package:suntusthsbatchfirst/Following_page.dart';
 import 'package:suntusthsbatchfirst/Posts_page.dart';
 import 'package:suntusthsbatchfirst/Splash_screen.dart';
 import 'package:suntusthsbatchfirst/edit_page.dart';
+import 'package:suntusthsbatchfirst/timeline.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
           onPressed: (){
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context)=>SplashScreen(),
+              MaterialPageRoute(builder: (context)=>TimeLinePage(),
               ),
             );
           },
