@@ -18,16 +18,16 @@ List<String> images = [
 ];
 
 List<Timelinemodel> timelinemodels = [
-  Timelinemodel(username: "Abdur Rajjak", profileImageURL: "images/profile_images/user_1.jpg", address: null, caption: null, postsImageURl: null, likes: null),
-  Timelinemodel(username: "Shakib Al Hasan", profileImageURL: "images/profile_images/user_2.jpg", address: null, caption: null, postsImageURl: null, likes: null),
-  Timelinemodel(username: "Tawsif Mahbub", profileImageURL: "images/profile_images/user_3.jpg", address: null, caption: null, postsImageURl: null, likes: null),
-  Timelinemodel(username: "Mosharraf Karim", profileImageURL: "images/profile_images/user_4.jpg", address: null, caption: null, postsImageURl: null, likes: null),
-  Timelinemodel(username: "Chanchal Chowdhury", profileImageURL: "images/profile_images/user_5.jpg", address: null, caption: null, postsImageURl: null, likes: null),
-  Timelinemodel(username: "Afran Nisho", profileImageURL: "images/profile_images/user_6.jpg", address: null, caption: null, postsImageURl: null, likes: null),
-  Timelinemodel(username: "Ziaul Faruq Apurba", profileImageURL: "images/profile_images/user_7.jpg", address: null, caption: null, postsImageURl: null, likes: null),
-  Timelinemodel(username: "Siam Ahmed", profileImageURL: "images/profile_images/user_8.jpg", address: null, caption: null, postsImageURl: null, likes: null),
-  Timelinemodel(username: "Zakia Bari Mamo", profileImageURL: "images/profile_images/user_9.jpg", address: null, caption: null, postsImageURl: null, likes: null),
-  Timelinemodel(username: "Mashrafe Mortaza", profileImageURL: "images/profile_images/user_10.jpg", address: null, caption: null, postsImageURl: null, likes: null),
+  Timelinemodel(username: "Abdur Rajjak", profileImageURL: "images/profile_images/user_1.jpg", address: "Khulna-9100,Khulna,Bangladesh", caption: "Visit khulna district and other places", postsImageURl: "images/Posts/Post_1.jpg", likes: 234),
+  Timelinemodel(username: "Shakib Al Hasan", profileImageURL: "images/profile_images/user_2.jpg", address: "Khulna-9100,Khulna,Bangladesh", caption: "Visit khulna district and other places", postsImageURl: "images/Posts/Post_2.png", likes: 213),
+  Timelinemodel(username: "Tawsif Mahbub", profileImageURL: "images/profile_images/user_3.jpg", address: "Khulna-9100,Khulna,Bangladesh", caption: "Visit khulna district and other places", postsImageURl: "images/Posts/Post_3.jpg", likes: 456),
+  Timelinemodel(username: "Mosharraf Karim", profileImageURL: "images/profile_images/user_4.jpg", address: "Khulna-9100,Khulna,Bangladesh", caption: "Visit khulna district and other places", postsImageURl: "images/Posts/Post_4.jpg", likes: 678),
+  Timelinemodel(username: "Chanchal Chowdhury", profileImageURL: "images/profile_images/user_5.jpg", address: "Khulna-9100,Khulna,Bangladesh", caption: "Visit khulna district and other places", postsImageURl: "images/Posts/Post_5.jpg", likes: 786),
+  Timelinemodel(username: "Afran Nisho", profileImageURL: "images/profile_images/user_6.jpg", address: "Khulna-9100,Khulna,Bangladesh", caption: "Visit khulna district and other places", postsImageURl: "images/Posts/Post_6.jpg", likes: 5678),
+  Timelinemodel(username: "Ziaul Faruq Apurba", profileImageURL: "images/profile_images/user_7.jpg", address: "Khulna-9100,Khulna,Bangladesh", caption: "Visit khulna district and other places", postsImageURl: "images/Posts/Post_7.jpg", likes: 565),
+  Timelinemodel(username: "Siam Ahmed", profileImageURL: "images/profile_images/user_8.jpg", address: "Khulna-9100,Khulna,Bangladesh", caption: "Visit khulna district and other places", postsImageURl: "images/Posts/Post_8.jpg", likes: 6789),
+  Timelinemodel(username: "Zakia Bari Mamo", profileImageURL: "images/profile_images/user_9.jpg", address: "Khulna-9100,Khulna,Bangladesh", caption: "Visit khulna district and other places", postsImageURl: "images/Posts/Post_9.jpg", likes: 6754),
+  Timelinemodel(username: "Mashrafe Mortaza", profileImageURL: "images/profile_images/user_10.jpg", address: "Khulna-9100,Khulna,Bangladesh", caption: "Visit khulna district and other places", postsImageURl: "images/Posts/Post_10.jpg", likes: 454),
 ];
 
 
@@ -133,6 +133,150 @@ class _TimeLinePageState extends State<TimeLinePage> {
                   ),
                   textAlign: TextAlign.start,
                 ),
+              ),
+            ),
+
+            // Post container
+            Expanded(
+              child: ListView.builder(
+                  padding: EdgeInsets.symmetric(horizontal: 12,vertical: 12),
+                  itemCount: timelinemodels.length,
+                  itemBuilder: (BuildContext context, int index){
+                    return Container(
+                      height: MediaQuery.of(context).size.height/1.5,
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.symmetric(vertical: 15),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromRGBO(145, 234, 120, 1),
+                            Color.fromRGBO(145, 234, 120, .9),
+                            Color.fromRGBO(145, 234, 120, .8),
+                            Color.fromRGBO(145, 234, 120, .7),
+                            Color.fromRGBO(145, 234, 120, .6),
+                            Color.fromRGBO(145, 234, 120, .5),
+                            Color.fromRGBO(145, 234, 120, .4),
+                            Color.fromRGBO(145, 234, 120, .3),
+                            Color.fromRGBO(145, 234, 120, .2),
+                            Color.fromRGBO(145, 234, 120, .1),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(7.0),
+                        child: Column(
+                          children: [
+
+                          //Header row
+
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 10),
+                              child: Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 30,
+                                    backgroundImage: AssetImage("${timelinemodels[index].profileImageURL}"),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(horizontal: 10),
+                                      child: RichText(
+                                        textAlign: TextAlign.justify,
+                                        text: TextSpan(
+                                          text: "${timelinemodels[index].username}\n",
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w700,
+                                            color: Color.fromRGBO(0, 0, 0, .6),
+                                          ),
+                                          children: [
+                                            TextSpan(
+                                              text: "${DateTime.now()}",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w500,
+                                                color: Color.fromRGBO(0,0,0,.6),
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            // Address row
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.location_on,
+                                    size: 15,
+                                    color: Color.fromRGBO(0, 0, 0, .6),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                                      child: Text(
+                                          "${timelinemodels[index].address}",
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color.fromRGBO(0, 0, 0, .6),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            //Caption Text
+
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 12,vertical: 10),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height/15,
+                                width: MediaQuery.of(context).size.width,
+                                child: Text(
+                                  "${timelinemodels[index].caption}",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                    color: Color.fromRGBO(0, 0, 0, .6),
+                                  ),
+                                  textAlign: TextAlign.start,
+                                ),
+                              ),
+                            ),
+
+                            //Cpation image container
+
+                            Container(
+                              height: MediaQuery.of(context).size.height/4,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      "${timelinemodels[index].postsImageURl}"
+                                  ),
+                                  fit: BoxFit.fill
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+
+                          ],
+                        ),
+                      ),
+                    );
+                  }
               ),
             ),
           ],
