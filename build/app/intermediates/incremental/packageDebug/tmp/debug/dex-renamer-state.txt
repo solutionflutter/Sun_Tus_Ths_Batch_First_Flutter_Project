@@ -1,4 +1,4 @@
-#Tue Oct 26 09:53:30 BDT 2021
+#Thu Oct 28 10:23:51 BDT 2021
 base.0=D\:\\suntusthsbatchfirst\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
