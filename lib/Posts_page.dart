@@ -4,70 +4,80 @@ import 'package:suntusthsbatchfirst/home_page.dart';
 import 'package:suntusthsbatchfirst/models/Posts_Model.dart';
 
 List<Posts> posts = [
-  Posts(username: "Saied Ahammed Foyez",
+  Posts(
+    username: "Saied Ahammed Foyez",
     userPhoto: "images/Profile_Image.jpg",
     caption: "Visit khulna district and other places",
     postImage: "images/Posts/Post_1.jpg",
     address: "Khulna-9100,Khulna,Bangladesh",
     likes: 123,
   ),
-  Posts(username: "Saied Ahammed Foyez",
+  Posts(
+    username: "Saied Ahammed Foyez",
     userPhoto: "images/Profile_Image.jpg",
     caption: "Visit khulna district and other places",
     postImage: "images/Posts/Post_2.png",
     address: "Khulna-9100,Khulna,Bangladesh",
     likes: 1200,
   ),
-  Posts(username: "Saied Ahammed Foyez",
+  Posts(
+    username: "Saied Ahammed Foyez",
     userPhoto: "images/Profile_Image.jpg",
     caption: "Visit khulna district and other places",
     postImage: "images/Posts/Post_3.jpg",
     address: "Khulna-9100,Khulna,Bangladesh",
     likes: 1400,
   ),
-  Posts(username: "Saied Ahammed Foyez",
+  Posts(
+    username: "Saied Ahammed Foyez",
     userPhoto: "images/Profile_Image.jpg",
     caption: "Visit khulna district and other places",
     postImage: "images/Posts/Post_4.jpg",
     address: "Khulna-9100,Khulna,Bangladesh",
     likes: 100,
   ),
-  Posts(username: "Saied Ahammed Foyez",
+  Posts(
+    username: "Saied Ahammed Foyez",
     userPhoto: "images/Profile_Image.jpg",
     caption: "Visit khulna district and other places",
     postImage: "images/Posts/Post_5.jpg",
     address: "Khulna-9100,Khulna,Bangladesh",
     likes: 90,
   ),
-  Posts(username: "Saied Ahammed Foyez",
+  Posts(
+    username: "Saied Ahammed Foyez",
     userPhoto: "images/Profile_Image.jpg",
     caption: "Visit khulna district and other places",
     postImage: "images/Posts/Post_6.jpg",
     address: "Khulna-9100,Khulna,Bangladesh",
     likes: 21,
   ),
-  Posts(username: "Saied Ahammed Foyez",
+  Posts(
+    username: "Saied Ahammed Foyez",
     userPhoto: "images/Profile_Image.jpg",
     caption: "Visit khulna district and other places",
     postImage: "images/Posts/Post_7.jpg",
     address: "Khulna-9100,Khulna,Bangladesh",
     likes: 34,
   ),
-  Posts(username: "Saied Ahammed Foyez",
+  Posts(
+    username: "Saied Ahammed Foyez",
     userPhoto: "images/Profile_Image.jpg",
     caption: "Visit khulna district and other places",
     postImage: "images/Posts/Post_8.jpg",
     address: "Khulna-9100,Khulna,Bangladesh",
     likes: 39,
   ),
-  Posts(username: "Saied Ahammed Foyez",
+  Posts(
+    username: "Saied Ahammed Foyez",
     userPhoto: "images/Profile_Image.jpg",
     caption: "Visit khulna district and other places",
     postImage: "images/Posts/Post_9.jpg",
     address: "Khulna-9100,Khulna,Bangladesh",
     likes: 49,
   ),
-  Posts(username: "Saied Ahammed Foyez",
+  Posts(
+    username: "Saied Ahammed Foyez",
     userPhoto: "images/Profile_Image.jpg",
     caption: "Visit khulna district and other places",
     postImage: "images/Posts/Post_10.jpg",
@@ -92,14 +102,14 @@ class _PostsPageState extends State<PostsPage> {
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Color.fromRGBO(86,86,86,1),
+            color: Color.fromRGBO(86, 86, 86, 1),
           ),
           iconSize: 20,
-          onPressed: (){
+          onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context)=>HomePage(),
+                builder: (context) => HomePage(),
               ),
             );
           },
@@ -120,11 +130,11 @@ class _PostsPageState extends State<PostsPage> {
               color: Color.fromRGBO(100, 101, 103, 1),
             ),
             iconSize: 20,
-            onPressed: (){
+            onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context)=>PostsPage(),
+                  builder: (context) => PostsPage(),
                 ),
               );
             },
@@ -136,15 +146,15 @@ class _PostsPageState extends State<PostsPage> {
         child: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          padding:EdgeInsets.symmetric(
+          padding: EdgeInsets.symmetric(
             horizontal: 12,
             vertical: 20,
           ),
           child: ListView.builder(
-              itemCount: posts.length,
-              itemBuilder: (BuildContext context, int index){
-                return Container(
-                  height: MediaQuery.of(context).size.height/1.3,
+            itemCount: posts.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                  height: MediaQuery.of(context).size.height / 1.3,
                   width: MediaQuery.of(context).size.width,
                   margin: EdgeInsets.only(top: 25),
                   decoration: BoxDecoration(
@@ -163,7 +173,6 @@ class _PostsPageState extends State<PostsPage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-
                         //User Name ,date And Photo Row
 
                         Row(
@@ -171,20 +180,21 @@ class _PostsPageState extends State<PostsPage> {
                           children: [
                             CircleAvatar(
                               radius: 25,
-                              backgroundImage: AssetImage('${posts[index].userPhoto}'),
+                              backgroundImage:
+                                  AssetImage('${posts[index].userPhoto}'),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width/20,
+                              width: MediaQuery.of(context).size.width / 20,
                             ),
                             RichText(
-                                textAlign: TextAlign.start,
-                                text: TextSpan(
+                              textAlign: TextAlign.start,
+                              text: TextSpan(
                                   text: "${posts[index].username}\n",
                                   style: TextStyle(
                                     fontStyle: FontStyle.normal,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 18,
-                                    color: Color.fromRGBO(248, 248, 248,.6),
+                                    color: Color.fromRGBO(248, 248, 248, .6),
                                   ),
                                   children: [
                                     TextSpan(
@@ -193,11 +203,11 @@ class _PostsPageState extends State<PostsPage> {
                                         fontStyle: FontStyle.normal,
                                         fontWeight: FontWeight.w700,
                                         fontSize: 15,
-                                        color: Color.fromRGBO(248, 248, 248,.6),
+                                        color:
+                                            Color.fromRGBO(248, 248, 248, .6),
                                       ),
                                     )
-                                  ]
-                                ),
+                                  ]),
                             ),
                           ],
                         ),
@@ -210,19 +220,19 @@ class _PostsPageState extends State<PostsPage> {
                             Icon(
                               Icons.location_on_outlined,
                               size: 18,
-                              color: Color.fromRGBO(248, 248, 248,.6),
+                              color: Color.fromRGBO(248, 248, 248, .6),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width/30,
+                              width: MediaQuery.of(context).size.width / 30,
                             ),
                             Text(
-                                "${posts[index].address}",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
-                                  fontStyle: FontStyle.italic,
-                                  color: Color.fromRGBO(248, 248, 248,.6),
-                                ),
+                              "${posts[index].address}",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                fontStyle: FontStyle.italic,
+                                color: Color.fromRGBO(248, 248, 248, .6),
+                              ),
                             ),
                           ],
                         ),
@@ -232,7 +242,7 @@ class _PostsPageState extends State<PostsPage> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: Align(
-                            alignment:Alignment.centerLeft,
+                            alignment: Alignment.centerLeft,
                             child: Text(
                               "${posts[index].caption}",
                               style: TextStyle(
@@ -249,7 +259,7 @@ class _PostsPageState extends State<PostsPage> {
                         //Caption image container
 
                         Container(
-                          height: MediaQuery.of(context).size.height/2.6,
+                          height: MediaQuery.of(context).size.height / 2.6,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -262,76 +272,70 @@ class _PostsPageState extends State<PostsPage> {
 
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children:[
+                          children: [
                             Container(
-                              height: MediaQuery.of(context).size.height/10,
-                              width: MediaQuery.of(context).size.width/3.4,
-
+                              height: MediaQuery.of(context).size.height / 10,
+                              width: MediaQuery.of(context).size.width / 3.4,
                               child: FlatButton.icon(
-                                  onPressed: (){},
+                                  onPressed: () {},
                                   icon: Icon(
                                     CupertinoIcons.heart,
                                     size: 15,
-                                    color:Color.fromRGBO(245, 245, 245, 1),
+                                    color: Color.fromRGBO(245, 245, 245, 1),
                                   ),
                                   label: Text(
-                                      "${posts[index].likes} likes",
+                                    "${posts[index].likes} likes",
                                     style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 10,
                                       fontWeight: FontWeight.w500,
                                       color: Color.fromRGBO(245, 245, 245, 1),
                                     ),
-                                  )
-                              ),
+                                  )),
                             ),
                             Container(
-                              height: MediaQuery.of(context).size.height/10,
-                              width: MediaQuery.of(context).size.width/3.2,
+                              height: MediaQuery.of(context).size.height / 10,
+                              width: MediaQuery.of(context).size.width / 3.2,
                               child: FlatButton.icon(
-                                  onPressed: (){},
+                                  onPressed: () {},
                                   icon: Icon(
                                     Icons.add_comment_outlined,
                                     size: 15,
-                                    color:Color.fromRGBO(245, 245, 245, 1),
+                                    color: Color.fromRGBO(245, 245, 245, 1),
                                   ),
                                   label: Text(
                                     "Comments",
                                     style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 10,
                                       fontWeight: FontWeight.w500,
                                       color: Color.fromRGBO(245, 245, 245, 1),
                                     ),
-                                  )
-                              ),
+                                  )),
                             ),
                             Container(
-                              height: MediaQuery.of(context).size.height/10,
-                              width: MediaQuery.of(context).size.width/3.5,
+                              height: MediaQuery.of(context).size.height / 10,
+                              width: MediaQuery.of(context).size.width / 4,
                               child: FlatButton.icon(
-                                  onPressed: (){},
+                                  onPressed: () {},
                                   icon: Icon(
                                     Icons.share_outlined,
                                     size: 15,
-                                    color:Color.fromRGBO(245, 245, 245, 1),
+                                    color: Color.fromRGBO(245, 245, 245, 1),
                                   ),
                                   label: Text(
                                     "Share",
                                     style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 10,
                                       fontWeight: FontWeight.w500,
                                       color: Color.fromRGBO(245, 245, 245, 1),
                                     ),
-                                  )
-                              ),
+                                  )),
                             ),
                           ],
                         ),
-
                       ],
                     ),
-                  )
-                );
-              },
+                  ));
+            },
           ),
         ),
       ),

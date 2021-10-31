@@ -7,6 +7,33 @@ import 'package:suntusthsbatchfirst/Splash_screen.dart';
 import 'package:suntusthsbatchfirst/edit_page.dart';
 import 'package:suntusthsbatchfirst/timeline.dart';
 
+List<String> images = [
+  "images/Posts/Post_1.jpg",
+  "images/Posts/Post_2.png",
+  "images/Posts/Post_3.jpg",
+  "images/Posts/Post_4.jpg",
+  "images/Posts/Post_5.jpg",
+  "images/Posts/Post_6.jpg",
+  "images/Posts/Post_7.jpg",
+  "images/Posts/Post_8.jpg",
+  "images/Posts/Post_9.jpg",
+  "images/Posts/Post_10.jpg",
+];
+
+List<String> friends = [
+  "images/profile_images/user_1.jpg",
+  "images/profile_images/user_2.jpg",
+  "images/profile_images/user_3.jpg",
+  "images/profile_images/user_4.jpg",
+  "images/profile_images/user_5.jpg",
+  "images/profile_images/user_6.jpg",
+  "images/profile_images/user_7.jpg",
+  "images/profile_images/user_8.jpg",
+  "images/profile_images/user_9.jpg",
+  "images/profile_images/user_10.jpg",
+  "images/Femail_Profile_Icon.jpg",
+  "images/Profile_Icon.jpg"
+];
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -21,10 +48,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: (){
+          onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context)=>TimeLinePage(),
+              MaterialPageRoute(
+                builder: (context) => TimeLinePage(),
               ),
             );
           },
@@ -33,10 +61,11 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           InkWell(
-            onTap: (){
+            onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context)=> EditPage(),
+                MaterialPageRoute(
+                  builder: (context) => EditPage(),
                 ),
               );
             },
@@ -55,12 +84,14 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.black45,
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text("Edit"),
-                    Icon(Icons.create_outlined,size: 15,),
-                  ]
-                ),
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("Edit"),
+                      Icon(
+                        Icons.create_outlined,
+                        size: 15,
+                      ),
+                    ]),
               ),
             ),
           ),
@@ -68,162 +99,162 @@ class _HomePageState extends State<HomePage> {
         title: Text("Personal Info"),
         centerTitle: true,
       ),
-      body: Align(
-        alignment: Alignment.center,
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-
-              // User name and profile image Container start
-              Container(
-                height: MediaQuery.of(context).size.height/4,
-                width: MediaQuery.of(context).size.width,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-
-                    // Profile Image Container
-                    Container(
-                      height: MediaQuery.of(context).size.height/7,
-                      width: MediaQuery.of(context).size.width/4,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                          image: AssetImage("images/Profile_Image.jpg"),
-                          fit: BoxFit.cover,
-                        ),
-                        border: Border.all(
-                          color: Color.fromRGBO(52, 95, 97,1),
-                          width: 3,
-                          style: BorderStyle.solid,
-                        ),
-                      ),
-                    ),
-
-                    // Address And Bio Container
-                    Container(
-                      width: MediaQuery.of(context).size.width/1.5,
-                      height: MediaQuery.of(context).size.height/7,
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: RichText(
-                            textAlign: TextAlign.justify,
-                            text: TextSpan(
-                              text: "Saied Ahammed Foyez\n",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.black45,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: "217/A/1,South Perirbagh,Mirpur-2,Dhaka-1216",
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.grey.shade400,
-                                  ),
-                                ),
-                              ]
-                            ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              //bio container
-
-              Container(
-                height: MediaQuery.of(context).size.height/3.3,
-                width: MediaQuery.of(context).size.width,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 5,
-                  ),
-                  child: Column(
+      body: SingleChildScrollView(
+        child: Align(
+          alignment: Alignment.center,
+          child: Container(
+            height: MediaQuery.of(context).size.height / .1,
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              children: [
+                // User name and profile image Container start
+                Container(
+                  height: MediaQuery.of(context).size.height / 5.5,
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-
-                      //Bio text And create icon Row
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                              "Bio",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 20,
-                                color: Color.fromRGBO(0, 0, 0, .5),
-                              ),
+                      // Profile Image Container
+                      Container(
+                        height: MediaQuery.of(context).size.height / 7,
+                        width: MediaQuery.of(context).size.width / 4,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(15),
+                          image: DecorationImage(
+                            image: AssetImage("images/Profile_Image.jpg"),
+                            fit: BoxFit.cover,
                           ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width/35,
+                          border: Border.all(
+                            color: Color.fromRGBO(52, 95, 97, 1),
+                            width: 3,
+                            style: BorderStyle.solid,
                           ),
-                          Icon(
-                            Icons.create_rounded,
-                            size: 20,
-                            color: Color.fromRGBO(0, 0, 0, .5),
-                          ),
-                        ],
+                        ),
                       ),
 
-                      //Bio Container
+                      // Address And Bio Container
                       Container(
-                        height: MediaQuery.of(context).size.height/5,
-                        width: MediaQuery.of(context).size.width,
-                        child: Text(
-                          "Hi! I am Saied Ahammed Foyez. "
-                              "I Already completed my BSc program in "
-                              "Computer Science and Engineering form "
-                              "AIUB. Now I am working on flutter "
-                              "development project which is a "
-                              "ICTD bangladesh project. I am staying "
-                              "in khulna now.",
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromRGBO(0, 0, 0, .5),
-                            wordSpacing: 3,
+                        width: MediaQuery.of(context).size.width / 1.5,
+                        height: MediaQuery.of(context).size.height / 7,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: RichText(
+                            textAlign: TextAlign.justify,
+                            text: TextSpan(
+                                text: "Saied Ahammed Foyez\n",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black45,
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text:
+                                        "217/A/1,South Perirbagh,Mirpur-2,Dhaka-1216",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.grey.shade400,
+                                    ),
+                                  ),
+                                ]),
                           ),
-                          textAlign: TextAlign.justify,
                         ),
                       ),
                     ],
                   ),
                 ),
-              ),
 
-              //Edit Profile , Follow , Following
+                //bio container
 
-              Container(
-                height: MediaQuery.of(context).size.height/10,
-                width: MediaQuery.of(context).size.width,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height/15,
-                      width: MediaQuery.of(context).size.width/4,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black26,
-                          width: 3,
-                          style: BorderStyle.solid,
+                Container(
+                  height: MediaQuery.of(context).size.height / 2.6,
+                  width: MediaQuery.of(context).size.width,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 5,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        //Bio text And create icon Row
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 13),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Bio",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 20,
+                                  color: Color.fromRGBO(0, 0, 0, .5),
+                                ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 35,
+                              ),
+                              Icon(
+                                Icons.create_rounded,
+                                size: 20,
+                                color: Color.fromRGBO(0, 0, 0, .5),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      child: FlatButton.icon(
-                          onPressed: (){
+
+                        //Bio Container
+                        Container(
+                          height: MediaQuery.of(context).size.height / 3.5,
+                          width: MediaQuery.of(context).size.width,
+                          child: Text(
+                            "Hi! I am Saied Ahammed Foyez. "
+                            "I Already completed my BSc program in "
+                            "Computer Science and Engineering form "
+                            "AIUB. Now I am working on flutter "
+                            "development project which is a "
+                            "ICTD bangladesh project. I am staying "
+                            "in khulna now.",
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromRGBO(0, 0, 0, .5),
+                              wordSpacing: 3,
+                            ),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                //Edit Profile , Follow , Following
+
+                Container(
+                  height: MediaQuery.of(context).size.height / 13,
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height / 15,
+                        width: MediaQuery.of(context).size.width / 4,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black26,
+                            width: 3,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        child: FlatButton.icon(
+                          onPressed: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context)=>PostsPage(),
+                                builder: (context) => PostsPage(),
                               ),
                             );
                           },
@@ -233,31 +264,31 @@ class _HomePageState extends State<HomePage> {
                             color: Color.fromRGBO(0, 0, 0, .5),
                           ),
                           label: Text(
-                              "Posts",
+                            "Posts",
                             style: TextStyle(
-                              fontSize: 15,
+                              fontSize: 10,
                               fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(0, 0, 0, .5),
                             ),
                           ),
-                      ),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height/15,
-                      width: MediaQuery.of(context).size.width/3.5,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black26,
-                          width: 3,
-                          style: BorderStyle.solid,
                         ),
                       ),
-                      child: FlatButton.icon(
-                          onPressed: (){
+                      Container(
+                        height: MediaQuery.of(context).size.height / 15,
+                        width: MediaQuery.of(context).size.width / 3.5,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black26,
+                            width: 3,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        child: FlatButton.icon(
+                          onPressed: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context)=>FollowerPage(),
+                                builder: (context) => FollowerPage(),
                               ),
                             );
                           },
@@ -267,31 +298,30 @@ class _HomePageState extends State<HomePage> {
                             color: Color.fromRGBO(0, 0, 0, .5),
                           ),
                           label: Text(
-                              "Follower",
+                            "Follower",
                             style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15,
-                              color: Color.fromRGBO(0, 0, 0, .5)
-                            ),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 10,
+                                color: Color.fromRGBO(0, 0, 0, .5)),
                           ),
-                      ),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height/15,
-                      width: MediaQuery.of(context).size.width/3.2,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black26,
-                          width: 3,
-                          style: BorderStyle.solid,
                         ),
                       ),
-                      child: FlatButton.icon(
-                          onPressed: (){
+                      Container(
+                        height: MediaQuery.of(context).size.height / 15,
+                        width: MediaQuery.of(context).size.width / 3.2,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black26,
+                            width: 3,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        child: FlatButton.icon(
+                          onPressed: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context)=> FollowingPage(),
+                                builder: (context) => FollowingPage(),
                               ),
                             );
                           },
@@ -303,17 +333,144 @@ class _HomePageState extends State<HomePage> {
                           label: Text(
                             'Following',
                             style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: Color.fromRGBO(0, 0, 0, .5)
+                                fontSize: 10,
+                                fontWeight: FontWeight.w500,
+                                color: Color.fromRGBO(0, 0, 0, .5)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                //photo Gallery container
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / .4,
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      children: [
+                        // Text Container
+
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 15,
+                            width: MediaQuery.of(context).size.width,
+                            child: Text(
+                              "All Photos",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Color.fromRGBO(21, 21, 21, .6),
+                              ),
                             ),
                           ),
-                      ),
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 5),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 15,
+                            width: MediaQuery.of(context).size.width,
+                            child: Text(
+                              "Posts Photos",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Color.fromRGBO(21, 21, 21, .6),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 15),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 1.5,
+                            width: MediaQuery.of(context).size.width,
+                            child: GridView.builder(
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 2,
+                                      crossAxisSpacing: 10,
+                                      mainAxisSpacing: 10,
+                                      childAspectRatio: 3 / 2),
+                              itemCount: images.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Container(
+                                  height:
+                                      MediaQuery.of(context).size.height / 4,
+                                  width: MediaQuery.of(context).size.width / 4,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("${images[index]}"),
+                                        fit: BoxFit.fill),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 5),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 15,
+                            width: MediaQuery.of(context).size.width,
+                            child: Text(
+                              "Friends Photos",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Color.fromRGBO(21, 21, 21, .6),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 15),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 1.2,
+                            width: MediaQuery.of(context).size.width,
+                            child: GridView.builder(
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 2,
+                                      crossAxisSpacing: 10,
+                                      mainAxisSpacing: 10,
+                                      childAspectRatio: 3 / 2),
+                              itemCount: friends.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Container(
+                                  height:
+                                      MediaQuery.of(context).size.height / 4,
+                                  width: MediaQuery.of(context).size.width / 4,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("${friends[index]}"),
+                                        fit: BoxFit.fill),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
