@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:suntusthsbatchfirst/Follower_page.dart';
 import 'package:suntusthsbatchfirst/Following_page.dart';
+import 'package:suntusthsbatchfirst/Messenger.dart';
 import 'package:suntusthsbatchfirst/Posts_page.dart';
 import 'package:suntusthsbatchfirst/Splash_screen.dart';
 import 'package:suntusthsbatchfirst/edit_page.dart';
@@ -234,11 +235,17 @@ class _HomePageState extends State<HomePage> {
                 //Edit Profile , Follow , Following
 
                 Container(
-                  height: MediaQuery.of(context).size.height / 13,
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  height: MediaQuery.of(context).size.height / 5,
                   width: MediaQuery.of(context).size.width,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  child: Wrap(
+                    runSpacing: 10,
+                    direction: Axis.horizontal,
+                    alignment: WrapAlignment.spaceBetween,
+                    crossAxisAlignment: WrapCrossAlignment.start,
                     children: [
+                      //Posts Flat Button Container
+
                       Container(
                         height: MediaQuery.of(context).size.height / 15,
                         width: MediaQuery.of(context).size.width / 4,
@@ -273,6 +280,8 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+
+                      //Follower Flat Button Container
                       Container(
                         height: MediaQuery.of(context).size.height / 15,
                         width: MediaQuery.of(context).size.width / 3.5,
@@ -306,6 +315,9 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+
+                      //Following Flat Button Container
+
                       Container(
                         height: MediaQuery.of(context).size.height / 15,
                         width: MediaQuery.of(context).size.width / 3.2,
@@ -332,6 +344,42 @@ class _HomePageState extends State<HomePage> {
                           ),
                           label: Text(
                             'Following',
+                            style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w500,
+                                color: Color.fromRGBO(0, 0, 0, .5)),
+                          ),
+                        ),
+                      ),
+
+                      //Messanger Container Flat Button
+
+                      Container(
+                        height: MediaQuery.of(context).size.height / 15,
+                        width: MediaQuery.of(context).size.width / 3.2,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black26,
+                            width: 3,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        child: FlatButton.icon(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MessengerPage(),
+                              ),
+                            );
+                          },
+                          icon: Icon(
+                            CupertinoIcons.chat_bubble_2_fill,
+                            size: 15,
+                            color: Color.fromRGBO(0, 0, 0, 0.5),
+                          ),
+                          label: Text(
+                            'Messenger',
                             style: TextStyle(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w500,
